@@ -9,6 +9,13 @@ class ApplicationsController < ApplicationController
         render json: application
     end
 
+    def update
+        application = Application.find(params[:id])
+        application.update(application_params)
+        render json: application
+
+    end
+
     def destroy
         application = Application.find(params[:id])
         application.destroy
@@ -16,6 +23,6 @@ class ApplicationsController < ApplicationController
     
     private
     def application_params
-        params.permit(:title,:company,:description,:user_id)
+        params.permit(:title,:company,:description,:user_id,:applied)
     end
 end
