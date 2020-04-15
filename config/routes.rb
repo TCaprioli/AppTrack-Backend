@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :folder_items
+  resources :folders
+  resources :resapps
   resources :resumes
   resources :applications
   resources :users

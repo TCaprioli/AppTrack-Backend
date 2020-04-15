@@ -1,0 +1,2 @@
+class FolderItem < ApplicationRecord
+end

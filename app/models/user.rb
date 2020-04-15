@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :applications, dependent: :destroy
     has_many :resumes, dependent: :destroy
+    has_many :folders
 
 
     validates_uniqueness_of :email

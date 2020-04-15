@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_202425) do
+ActiveRecord::Schema.define(version: 2020_04_15_143854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 2020_04_12_202425) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "applied"
     t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "folders", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_folders_on_user_id"
+  end
+
+  create_table "resapps", force: :cascade do |t|
+    t.bigint "resume_id"
+    t.bigint "application_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["application_id"], name: "index_resapps_on_application_id"
+    t.index ["resume_id"], name: "index_resapps_on_resume_id"
   end
 
   create_table "resumes", force: :cascade do |t|
