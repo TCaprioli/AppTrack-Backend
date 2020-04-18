@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_143854) do
+ActiveRecord::Schema.define(version: 2020_04_15_220214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2020_04_15_143854) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "applied"
     t.index ["user_id"], name: "index_applications_on_user_id"
+  end
+
+  create_table "folder_items", force: :cascade do |t|
+    t.bigint "folder_id"
+    t.bigint "application_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["application_id"], name: "index_folder_items_on_application_id"
+    t.index ["folder_id"], name: "index_folder_items_on_folder_id"
   end
 
   create_table "folders", force: :cascade do |t|
