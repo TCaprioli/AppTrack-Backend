@@ -15,6 +15,7 @@ class FolderItemsController < ApplicationController
         folder_item = FolderItem.find(params[:id])
         folder_item.destroy
     end
+
     
     private
     def folder_item_params

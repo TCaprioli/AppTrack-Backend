@@ -5,9 +5,5 @@ class Application < ApplicationRecord
     has_many :folder_items, dependent: :destroy
     has_many :folders, through: :folder_items
 
-    def delete_folder
-        
-    end
-
    
 end
