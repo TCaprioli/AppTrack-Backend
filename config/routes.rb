@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :applications
   resources :users
   post '/folderItems', to: 'folder_items#create'
+  get '/appmonth', to: 'users#appmonth'
   post '/signup', to: 'users#create'
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'

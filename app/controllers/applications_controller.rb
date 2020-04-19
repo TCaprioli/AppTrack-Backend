@@ -24,6 +24,7 @@ class ApplicationsController < ApplicationController
     def destroy
         application = Application.find(params[:id])
         application.destroy
+        render json: application.user.folders
     end
     
     private

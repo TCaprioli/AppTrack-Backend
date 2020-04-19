@@ -1,5 +1,5 @@
 class ApplicationSerializer < ActiveModel::Serializer
-  attributes :id, :title, :company, :description, :created_at, :applied, :resapps
+  attributes :id, :title, :company, :description, :created_at, :applied, :resapps, :folder_items
   def resapps
     self.object.resapps.map do |resapp|
       {id: resapp.id,

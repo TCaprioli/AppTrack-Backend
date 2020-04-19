@@ -14,6 +14,7 @@ class FolderItemsController < ApplicationController
     def destroy
         folder_item = FolderItem.find(params[:id])
         folder_item.destroy
+        render json: folder_item.folder_for
     end
 
     
