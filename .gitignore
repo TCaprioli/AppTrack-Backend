@@ -32,4 +32,4 @@ yarn-debug.log*
 
 /config/secrets/*
 
-/config/initializers/*
+config/initializers/carrierwave.rb
