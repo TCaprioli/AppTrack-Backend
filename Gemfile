@@ -31,7 +31,9 @@ gem 'carrierwave'
 
 gem 'carrierwave-base64'
 
-
+gem "fog-google"
+gem "google-api-client", "> 0.8.5", "< 0.9"
+gem "mime-types"
 
 
 gem 'rack-cors'
